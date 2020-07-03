@@ -1,4 +1,4 @@
-## Welcome to GitHub Pages
+## This blog is about deploying a distributed system for deep learning
 
 You can use the [editor on GitHub](https://github.com/aiwen7/aiwen7.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
