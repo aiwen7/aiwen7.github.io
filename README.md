@@ -13,6 +13,7 @@ Environment
   sudo yum install "kernel-devel-uname-r == $(uname -r)"
   
 _we must insure that kernel-devel match the kernel version_
+
 _if it shows that no match kernel-devel, reboot then try again_
 
   yum install epel-release
@@ -77,6 +78,7 @@ _download local installers(x86) —— Local installer for RedHat/CentOS 7_
 ### Install Python & Anaconda & Tensorflow
 
 ```markdown
+
 # 1 Python
 
 [a method for python3 installation](https://www.cnblogs.com/malukang/p/12610914.html)
@@ -122,7 +124,6 @@ _conda activate your-conda-environment and install the following .whl_
   cd ../uff
   
   pip3 install uff-0.6.5-py2-py3-none-any.whl
-
 
 ```
 
@@ -192,6 +193,5 @@ _For every client if you get a error when use horovod to train_
 	systemctl start iptables.service
 
 _use `cat /var/log/messages | grep mount` check where cause the problem_
-
   
 ```
