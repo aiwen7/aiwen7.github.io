@@ -1,25 +1,24 @@
 ## This blog is about deploying a distributed system for deep learning
 
-You can use the [editor on GitHub](https://github.com/aiwen7/aiwen7.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+Environment
+  Centos 8.1 | NVIDIA TESLA T4 TENSOR CORE GPU | Horovod | Tensorflow-gpu-2.1.0 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### Download drivers for NVIDIA & system compiler software
 
 ```markdown
-Syntax highlighted code block
+# 1 Software & package & configuration
+yum update
+sudo yum install "kernel-devel-uname-r == $(uname -r)"
+- we must insure that kernel-devel match the kernel version
+- if it shows that no match kernel-devel, reboot then try again
+yum install epel-release
+yum install gcc gcc-c++ dkms make
+echo -e "blacklist nouveau\noptions nouveau modeset=0" > /etc/modprobe.d/blacklist.conf
+- forbid nouveau module load
+mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r).img.bak
+dracut /boot/initramfs-$(uname -r).img $(uname -r)
+reboot
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
 
 **Bold** and _Italic_ and `Code` text
 
@@ -28,10 +27,3 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/aiwen7/aiwen7.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
