@@ -166,7 +166,7 @@ for every machines :_
 
 ```
 
-### install NFS File sharing system
+### Install NFS File sharing system
 
 ```markdown
 
